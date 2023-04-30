@@ -1,0 +1,113 @@
+<h3>Edit Basic Information</h3>
+<div class="row">
+    <form action="/employees/{{employee._id}}" method="POST" class="col s12">
+        <input type="hidden" name="_method" value="PUT">
+
+         <div class="row">
+            <div class="input-field">
+                <input type="text" id="title" name="title" value="{{employee.title}}">
+                <label for="title">Title</label>
+            </div>
+        </div>
+
+         <div class="row">
+            <div class="input-field">
+                <input type="text" id="fullName" name="fullName" value="{{employee.fullName}}" >
+                <label for="fullName">Full Name</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="number" id="socialSecurity" name="socialSecurity" value="{{employee.socialSecurity}}" >
+                <label for="socialSecurity">Social Security Number</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="birthday" name="birthday" placeholder="MM/DD/YYYY" value="{{employee.birthday}}" >
+                <label for="birthday">Date of Birth</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="email" name="email"  value="{{employee.email}}" >
+                <label for="email">Employee's E-mail Address</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="address" name="address" value="{{employee.address}}" >
+                <label for="address">Address (<i>Street Number, Name, City, State, ZIP Code</i>)</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="number" id="phoneNumber" name="phoneNumber" value="{{employee.phoneNumber}}" >
+                <label for="phoneNumber">Employee's Telephone Number</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="firstWorkDay" name="firstWorkDay" placeholder="MM/DD/YYYY" value="{{employee.firstWorkDay}}" >
+                <label for="firstWorkDay">Employee's First Day of Employment</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <select id="status" name="identityAndEmploymentAuth" value="{{employee.identityAndEmploymentAuth}}">
+                   <option value="socndrive">Social Security and Driver's License</option>
+                    <option value="passport">Passport</option>
+                  </select>
+                <label for="identityAndEmploymentAuth">Identity and Employment Authorization</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <select id="status2" name="citizenship" value="{{employee.citizenship}}">
+                   <option id="attestCit" value="attestCit">A citizen of the United States</option>
+                    <option id="attestNonCit" value="attestNonCit">A noncitizen national of the United States</option>
+                    <option id="attestPerm" value="attestPerm">A lawful permanent resident</option>
+                    <option id="attestAlien" value="attestAlien">An alien authorized to work</option>
+                  </select>
+                <label for="citizenship">I attest, under penalty of perjury, that I am (select one of the following below)</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="issuerDL" name="issuerDL" placeholder="Issuing Authority" value="{{employee.issuerDL}}">
+                <input type="text" id="driverLicenseNum" name="driverLicenseNum" placeholder="Driver's License Number" value="{{employee.driverLicenseNum}}">
+                <input type="text" id="driverLicenseExp" name="driverLicenseExp" placeholder="Driver's License Expiration Date (mm/dd/yyyy)" value="{{employee.driverLicenseExp}}">
+                <label for="Drivers License">Driver's License</label>
+            </div>
+        </div>     
+
+        {{!-- <div class="row">
+            <div class="input-field">
+                <h5>Additonal Information:</h5>
+                <textarea id="body" name="body">{{employee.body}}</textarea>
+            </div>
+        </div> --}}
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="additionalInfo" name="additionalInfo" value="{{employee.additionalInfo}}" >
+                <label for="Additional Information">Additonal Information</label>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/dashboard" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>

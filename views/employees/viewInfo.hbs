@@ -1,0 +1,64 @@
+
+<h3>View Basic Information</h3>
+<div class="row">
+    <form action="/employees/viewInfo/{{employee._id}}" method="GET" class="col s12">
+        <input type="hidden" name="_method" value="GET">
+
+         <div class="row">
+                <label for="title">Date Added</label>
+                <div id="title" name="title" value="">{{employee.createdAt}}" </div>    
+        </div>
+
+        <div class="row">
+                <label for="title">Title</label>
+                <div id="title" name="title" value="">{{employee.title}}" </div>
+        </div>
+        
+        
+         <div class="row">
+                <label for="fullName">Full Name</label>
+                <div id="fullName" name="fullName" value="">{{employee.fullName}}</div>
+        </div>
+
+
+        <div class="row">
+            <div >
+                <label for="socialSecurity">Social Security Number</label>
+                <div id="socialSecurity" name="socialSecurity" value="" >{{employee.socialSecurity}}</div>
+            </div>
+        </div>
+
+        <div class="row">
+                <label for="birthday">Date of Birth</label>
+                <div id="birthday" name="birthday" value="">{{employee.birthday}} </div>
+        </div>
+
+        <div class="row">
+             <label for="email">Employee's E-mail Address</label>
+                <div id="email" name="email">{{employee.email}}</div>
+        </div>
+
+        <div class="row">
+            <label for="address">Address (<i>Street Number, Name, City, State, ZIP Code</i>)</label>
+                <div id="address" name="address">{{employee.address}}" </div>
+        </div>
+
+        <div class="row">
+            <label for="phoneNumber">Employee's Telephone Number</label>
+            <div id="phoneNumber" name="phoneNumber">{{employee.phoneNumber}}</div>
+        </div>
+
+        <div class="row">
+            <label for="firstWorkDay">Employee's First Day of Employment</label>
+            <div id="firstWorkDay" name="firstWorkDay">{{employee.firstWorkDay}}</div>
+        </div>     
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="additionalInfo" name="additionalInfo" value="{{employee.additionalInfo}}" >
+                <label for="Additional Information">Additonal Information</label>
+            </div>
+        </div>
+
+    </form>
+</div>

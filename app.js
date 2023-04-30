@@ -1,5 +1,6 @@
 const path = require('path')
 const express = require('express')
+const bodyParser = require('body-parser');
 const dotenv = require('dotenv')
 const morgan = require('morgan')
 const exphbs = require('express-handlebars')
@@ -20,8 +21,10 @@ connectDB()
 const app = express()
 
 //Body parser
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //Method Override
 app.use(methodOverride(function (req, res){
@@ -85,10 +88,10 @@ app.use(function (req, res, next) {
 app.use(express.static(path.join(__dirname, 'public')))
 
 // Routes
-app.use('/', require('./routes/index'))
+app.use('/', require('./routes/dashboard'))
 app.use('/auth', require('./routes/auth'))
-app.use('/stories', require('./routes/stories'))
+app.use('/employees', require('./routes/employees'))
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3030
 
 app.listen(PORT, console.log(`Server running in ${process.env.NODE_ENV} mode on ${PORT}`))
