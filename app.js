@@ -11,7 +11,7 @@ const MongoStore = require('connect-mongo')
 const connectDB = require('./config/db')
 
 //load config
-require("dotenv").config({ path: './config/config.env' })
+require("dotenv").config({ path: './config/.env' })
 
 //Passport config
 require('./config/passport')(passport)
