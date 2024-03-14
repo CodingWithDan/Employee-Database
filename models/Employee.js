@@ -31,6 +31,12 @@ const EmployeeSchema = new mongoose.Schema({
         trim: true
     },
 
+    production:{
+            type: String,
+            required: true,
+            trim: true
+    },
+
     phoneNumber:{
         type: Number,
         required: true,

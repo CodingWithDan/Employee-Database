@@ -1,5 +1,5 @@
 
-<h3>View Basic Information</h3>
+<h3>{{employee.fullName}} Information</h3>
 <div class="row">
     <form action="/employees/viewInfo/{{employee._id}}" method="GET" class="col s12">
         <input type="hidden" name="_method" value="GET">
@@ -51,7 +51,14 @@
         <div class="row">
             <label for="firstWorkDay">Employee's First Day of Employment</label>
             <div id="firstWorkDay" name="firstWorkDay">{{employee.firstWorkDay}}</div>
-        </div>     
+        </div>    
+
+        <div class="row">
+            <label for="production">Production Name</label>
+                <div id="production" name="production">              
+                {{employee.production}}
+            </div>
+        </div> 
 
         <div class="row">
             <div class="input-field">
